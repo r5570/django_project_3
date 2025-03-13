@@ -14,7 +14,7 @@ def home(request):
     context={
 
     }
-    template = loader.get_template('home.html')
+    template = loader.get_template('index.html')
     return HttpResponse(template.render(context,request))
 
 def productlist(request):

@@ -14,10 +14,15 @@ from django.shortcuts import get_object_or_404
 # C - Creating cart items
 @login_required
 def addToCart(request, product_id):
-    this_product = Product.objects.get(id = product_id)
+    this_product = Product.objects.get(id = product_id) # fetching the product object
+    # When adding product to cart, we need to check if the same user has added the same product
+    # to cart before, in that case, we will not create a new cart item, rather just increment 
+    # quantity
+
     cart_item, created = CartItem.objects.get_or_create(product = this_product, user = request.user)
     cart_item.quantity += 1
-    cart_item.save() 
+    # above two statements are equivalent to `INSERT into table ... on duplicate key UPDATE ...` 
+    cart_item.save() # save changes to SQL through Update
 
     return redirect('view_cart')
 
@@ -26,6 +31,7 @@ def addToCart(request, product_id):
 def viewCart(request):
     template = 'cart.html'
     cart_items = CartItem.objects.filter(user = request.user) 
+    # the above statement is equivalent to : SELECT * FROM cartitem WHERE user = <USER_ID>;
     total_price = sum(float(item.product.price) * item.quantity for item in cart_items)
 
     context = {

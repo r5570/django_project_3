@@ -50,7 +50,7 @@ class AddProduct(CreateView):
       'name',
       'price',
       'desc',
-      'quantity',
+      'stock',
       'pic'
 
     ]

@@ -8,38 +8,57 @@
 /* base.html header */
 
 header {
-    position: fixed;
+    /* position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
-    height: 40px;
-    background-color: red;
+    height: 40px; */
+
 
 
     .container-fluid {
-        background-color:red;
+        background-color: black;
+        position: absolute;
+        height: 130px;
+
 
 
         .navbar-brand {
 
             color: white;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            /* font-style: italic; */
-            /* font-size: 2rem; */
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 50px;
+        }
+
+        .collapse {
+
+            display: flex;
+            justify-content: center;
         }
 
         .nav-link {
 
             color: white;
-            /* font-style: italic; */
-            font-size: 0.80rem;
-            font-weight: 700;
+            font-size: 0.70rem;
+            font-weight: 400;
+            margin-top: 50px;
+            height: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+
         }
 
 
         .nav-link:hover {
 
-            text-decoration: line-through;
+            /* text-decoration: line-through; */
+            border-bottom: 3px solid white;
             transition-duration: 50ms;
         }
 
@@ -55,7 +74,7 @@ body {
 
 
         .back-video {
-           
+
             height: 100vh;
             width: 110vw;
             object-fit: cover;
@@ -68,7 +87,7 @@ body {
 
         }
     }
-    
+
     main {
         /* max-width: 800px; */
         width: 100%;
@@ -129,6 +148,9 @@ body {
                     height: 50%;
                     /* filter: saturate(0%); */
                     transition-duration: 2s;
+                    /* padding: 20px;
+                    padding-left: 50px;
+                    padding-right: 50px; */
                 }
 
                 .card-body {
@@ -145,8 +167,8 @@ body {
                         bottom: 10px;
                     }
 
-                    button:hover{
-                        background-color:rgb(27, 172, 44);
+                    button:hover {
+                        background-color: rgb(27, 172, 44);
                         color: white;
                         transition-duration: 30ms;
                     }
@@ -185,10 +207,11 @@ body {
 
             box-shadow: 2px 2px 2px 2px;
             transition-duration: 1s;
+
             img {
                 filter: saturate(100%);
                 transform: scale(1.1);
-                transition-duration:3s ;
+                transition-duration: 3s;
                 object-fit: cover;
             }
         }
@@ -223,8 +246,8 @@ body {
 
         margin-top: 20px;
 
-        th{
-             font-size: 1.10rem;
+        th {
+            font-size: 1.10rem;
         }
     }
 }

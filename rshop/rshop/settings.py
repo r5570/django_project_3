@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication',
     'cart',
     'orders',
+    'payment',
     
 ]
 
@@ -139,3 +140,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL='signin'
 LOGIN_REDIRECT_URL='homepage'
 LOGOUT_REDIRECT_URL='homepage'
+
+#Razorpay configs
+
+RAZORPAY_KEY_ID="rzp_test_iT6gwS9ftH5iSB"
+RAZORPAY_KEY_SECRET="8p27qOtwNzXU0EAulIpZc51b"
+
+CSRF_TRUSTED_ORIGINS=[
+
+     'https://api.razorpay.com',
+]
+
+TIME_ZONE = 'Asia/Kolkata'  # Change to your local time zone
+USE_TZ = True

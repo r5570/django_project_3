@@ -5,8 +5,9 @@
 
 <!-- The django template code to show all products in the page starts here -->
 
-<div class="
-" id="card-collection">
+
+<section class="Product_section">
+<div class="" id="card-collection">
   {% for product in prods %}
   <div class="card" style="width: 15rem;">
     {% if product.pic %}
@@ -27,6 +28,7 @@
   </div>
   {% endfor %}
 </div>
+</section>
 <!-- Django template code ends here -->
 
 {% endblock %}

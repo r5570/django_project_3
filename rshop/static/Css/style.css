@@ -5,31 +5,27 @@
 }
 
 
-/* base.html header */
+/* Styling for Base.html  */
 
 header {
-    /* position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    height: 40px; */
-
 
 
     .container-fluid {
         background-color: black;
         position: absolute;
         height: 130px;
+        z-index: 2;
 
 
 
         .navbar-brand {
 
             color: white;
-            font-family: "Bebas Neue", sans-serif;
+            font-family: "Yesteryear", cursive;
             font-weight: 400;
             font-style: normal;
             margin-top: 50px;
+            font-size: 1.20rem;
         }
 
         .collapse {
@@ -41,16 +37,14 @@ header {
         .nav-link {
 
             color: white;
-            font-size: 0.70rem;
-            font-weight: 400;
+            font-size: 0.90rem;
             margin-top: 50px;
-            height: 30px;
             margin-left: 5px;
             margin-right: 5px;
-            font-family: "Dancing Script", cursive;
-            font-optical-sizing: auto;
-            font-weight: weight;
+            font-family: "Yesteryear", cursive;
+            font-weight: 400;
             font-style: normal;
+
 
         }
 
@@ -58,7 +52,7 @@ header {
         .nav-link:hover {
 
             /* text-decoration: line-through; */
-            border-bottom: 3px solid white;
+            border-bottom: 1px solid white;
             transition-duration: 50ms;
         }
 
@@ -69,6 +63,10 @@ header {
 
 
 body {
+    /* background-color:rgb(10, 10, 10); */
+
+
+    /* Styling for Home page */
 
     .background-video {
 
@@ -88,15 +86,20 @@ body {
         }
     }
 
+
+
+
+
     main {
-        /* max-width: 800px; */
+
+
         width: 100%;
         margin: auto;
         margin-top: 51px;
         margin-bottom: 20px;
 
 
-        /* Styling for home page */
+
         .carousel {
             height: 300px;
             width: 100%;
@@ -121,7 +124,16 @@ body {
 
 
 
+
+
         /* Styling for products page */
+
+
+
+        .Product_section {
+
+            background-color: black;
+        }
 
         #card-collection {
             max-width: 80%;
@@ -132,7 +144,6 @@ body {
 
             div.card {
 
-                /* margin: 10px; */
                 margin-top: 50px;
                 max-width: 280px;
                 height: 480px;
@@ -144,8 +155,10 @@ body {
 
                 img {
                     object-fit: cover;
-                    aspect-ratio: 1/1;
-                    height: 50%;
+                    /* aspect-ratio: 1/1; */
+                    height: 76%;
+                    padding: 15px;
+
                     /* filter: saturate(0%); */
                     transition-duration: 2s;
                     /* padding: 20px;
@@ -180,14 +193,16 @@ body {
                     .card-title {
 
                         color: black;
-                        font-size: 1.20rem;
+                        font-size: 1rem;
                         font-weight: 900;
 
                     }
 
 
                     .card-text {
-                        font-size: 0.80rem;
+                        font-size: 0.70rem;
+                        position: absolute;
+
 
                     }
 
@@ -195,7 +210,9 @@ body {
                     #price {
 
                         font-weight: 700;
-                        font-size: 0.90rem;
+                        font-size: 0.80rem;
+                        bottom: 40px;
+
                     }
                 }
             }
@@ -207,6 +224,7 @@ body {
 
             box-shadow: 2px 2px 2px 2px;
             transition-duration: 1s;
+            margin-top: -1%;
 
             img {
                 filter: saturate(100%);
@@ -250,4 +268,11 @@ body {
             font-size: 1.10rem;
         }
     }
+
+
+
+
+    /* Add Product page */
+
+
 }

@@ -11,9 +11,10 @@ header {
 
 
     .container-fluid {
+        /* background-color: rgb(109, 163, 29); */
         background-color: black;
         position: absolute;
-        height: 130px;
+        height: 170px;
         z-index: 2;
 
 
@@ -21,30 +22,32 @@ header {
         .navbar-brand {
 
             color: white;
-            font-family: "Yesteryear", cursive;
-            font-weight: 400;
+            font-family: "Mea Culpa", cursive;
+            font-weight: 500;
             font-style: normal;
-            margin-top: 50px;
-            font-size: 1.20rem;
+            margin-top: 55px;
+            font-size: 1.60rem;
         }
 
         .collapse {
 
-            display: flex;
-            justify-content: center;
+            /* display: flex;
+            justify-content: center; */
         }
 
         .nav-link {
 
             color: white;
-            font-size: 0.90rem;
-            margin-top: 50px;
+            /* font-size: 1.20rem; */
+            font-size: 0.65rem;
+            font-weight: 900;
+            margin-top: 65px;
             margin-left: 5px;
             margin-right: 5px;
-            font-family: "Yesteryear", cursive;
-            font-weight: 400;
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
             font-style: normal;
-
 
         }
 
@@ -52,8 +55,39 @@ header {
         .nav-link:hover {
 
             /* text-decoration: line-through; */
-            border-bottom: 1px solid white;
-            transition-duration: 50ms;
+            border-bottom: 3px solid white;
+            transition-duration: 2s;
+        }
+
+
+
+        /* search icon */
+
+
+        #search {
+
+            margin-top: 55px;
+            height: 25px;
+            width: 300px;
+
+            input {
+
+                font-size: 0.80rem;
+                font-family: "Josefin Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: weight;
+                font-style: normal;
+                font-weight: 900;
+            }
+
+            button {
+
+                border: none;
+                color: white;
+                font-size: 0.90rem;
+                font-weight: 700;
+                margin-top: -10px;
+            }
         }
 
 
@@ -68,7 +102,14 @@ body {
 
     /* Styling for Home page */
 
-    .background-video {
+    #bg_image {
+
+        background-image: url(../images/Thanos_vs_trio1.jpg);
+        height: 90vh;
+        background-size: cover;
+    }
+
+    /* .background-video {
 
 
         .back-video {
@@ -84,7 +125,7 @@ body {
             z-index: -1;
 
         }
-    }
+    } */
 
 
 
@@ -132,7 +173,7 @@ body {
 
         .Product_section {
 
-            background-color: black;
+            background-color: rgb(195, 178, 178);
         }
 
         #card-collection {
@@ -141,12 +182,13 @@ body {
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
+            column-gap: 20px;
 
             div.card {
 
                 margin-top: 50px;
-                max-width: 280px;
-                height: 480px;
+                max-width: 250px;
+                height: 360px;
                 border-radius: 10px;
                 border: 1px solid;
                 overflow: hidden;
@@ -155,29 +197,35 @@ body {
 
                 img {
                     object-fit: cover;
-                    /* aspect-ratio: 1/1; */
-                    height: 76%;
-                    padding: 15px;
-
-                    /* filter: saturate(0%); */
+                    height: 75%;
+                    padding: 8px;
+                    filter: saturate(0%);
                     transition-duration: 2s;
-                    /* padding: 20px;
-                    padding-left: 50px;
-                    padding-right: 50px; */
+
                 }
 
                 .card-body {
-                    height: 50%;
+                    height: 35%;
                     position: relative;
                     color: black;
                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     font-style: italic;
 
                     button {
-                        width: 90%;
-                        font-size: smaller;
+
+
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        font-size: 1.50rem;
+                        /* font-weight: 600; */
                         position: absolute;
-                        bottom: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        left: 40%;
+                        bottom: 15px;
+                        background-color: black;
                     }
 
                     button:hover {
@@ -193,18 +241,17 @@ body {
                     .card-title {
 
                         color: black;
-                        font-size: 1rem;
+                        font-size: 0.95rem;
                         font-weight: 900;
+                        font-family: "Josefin Sans", sans-serif;
+                        font-optical-sizing: auto;
+                        font-weight: weight;
+                        font-style: normal;
+
+
 
                     }
 
-
-                    .card-text {
-                        font-size: 0.70rem;
-                        position: absolute;
-
-
-                    }
 
 
                     #price {
@@ -227,7 +274,7 @@ body {
             margin-top: -1%;
 
             img {
-                filter: saturate(100%);
+                filter: saturate(normal);
                 transform: scale(1.1);
                 transition-duration: 3s;
                 object-fit: cover;
@@ -260,19 +307,119 @@ body {
     }
 
 
+
+
+
+
+    /* Styling for View cart page */
+
+
+
+
+
+    .cart_section {
+
+        margin-top: 120px;
+    }
+
+
     .table {
 
-        margin-top: 20px;
+        border: 10px solid black;
+
+
+        thead {
+
+            border: 2px solid;
+            height: 60px;
+
+        }
 
         th {
-            font-size: 1.10rem;
+            font-size: 0.86rem;
+            color: white;
+            background-color: black;
+        }
+
+
+        td {
+            font-size: 0.86rem;
+            font-weight: 700;
+
+
+            a {
+
+                font-size: 0.86rem;
+                font-weight: 700;
+
+            }
+
+
+            .row {
+
+                button {
+
+                    border: none;
+                    font-weight: 800;
+                    color: black;
+                }
+            }
         }
     }
 
 
 
+    .emptycart {
 
-    /* Add Product page */
+        text-align: center;
+        font-size: 8rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 700;
+        margin-top: 15px;
+
+        small {
+
+            font-size: 5rem;
+            display: block;
+        }
+    }
+
+
+    #shopmore {
+
+        margin-top: 100px;
+        font-size: 1.20rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+    }
+
+
+
+
+    /* Styling for Login & Registration forms */
+
+    .form-div {
+
+        margin-top: 120px;
+        font-size: 0.90rem;
+    }
+
+
+
+
+
+
+    /* Orders */
+
+    /* Styling for Order History */
+
+    h1 {
+
+        margin-top: 120px;
+        font-size: 2rem;
+        font-weight: 800;
+    }
 
 
 }

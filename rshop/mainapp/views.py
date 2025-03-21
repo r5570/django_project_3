@@ -66,6 +66,26 @@ class ProductView(ListView):
     ordering=['-id'] # to sort in descending order
 
 
+
+
+
+# search results
+
+def searchView(request):
+    query = request.GET.get('search_text') 
+    # fetch the query text from GET request 
+    
+    results = Product.objects.filter(name__icontains = query) 
+    # collect the product objects matching the name
+    
+    context = {
+        'items' : results,
+        'query' : query
+    }
+    template = loader.get_template('searchResults.html')
+    return HttpResponse(template.render(context, request))
+
+    
 # 3. U - Update
 
 class EditProduct(UpdateView):

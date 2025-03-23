@@ -16,16 +16,16 @@
 
             </th>
             <th>
-                Product
+                PRODUCT
             </th>
             <th>
-                Price
+                PRICE
             </th>
             <th>
-                Quantity
+                QUANTITY
             </th>
             <th>
-                Sub Total
+                SUB TOTAL
             </th>
             <th>
 
@@ -67,9 +67,9 @@
             </tr>
             {% endfor %}
             <tr>
-                <th colspan="4" class="text-center text-warning bg-dark">Total</th>
-                <td class="bg-secondary"><strong>Rs.<span id="overall-total">{{ total_price }}</span></strong></td>
-                <td><a href="{% url 'create_order' %}" class="btn btn-primary">Place Your Order</a></td>
+                <th colspan="4" class="text-center" id="Total">TOTAL</th>
+                <td class="bg-secondary" id="Total_price" style="background-color: none;"><strong>Rs.<span id="overall-total">{{ total_price }}</span></strong></td>
+                <td><a href="{% url 'create_order' %}" class="btn btn-primary" style="background-color:white; border:none; color:black;">Place Your Order</a></td>
             </tr>
         </tbody>
     </table>

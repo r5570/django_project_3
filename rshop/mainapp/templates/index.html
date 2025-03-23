@@ -8,7 +8,217 @@ Home page
     <source src="static/video/Background-video.mp4">
   </video>
 </div> -->
-<div id="bg_image">
+<section class="Home-section">
+  <div><a href=""><button class="Home_buttons">STEP INTO THE WORLD OF COMICS WITH US</button>
+    </a></div>
+  <!-- <div><a href=""><button class="Home_buttons">MOVIES</button>
+    </a></div>
+  <div><a href=""><button class="Home_buttons"> VIDEOS</button>
+    </a></div> -->
+</section>
 
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" id="image1">
+
+    </div>
+    <div class="carousel-item" id="image2">
+
+    </div>
+    <div class="carousel-item" id="image3">
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
+<h1 id="Home-heading1"></h1>
+<script>
+  const heading = document.getElementById('Home-heading1');
+  const text = "FREE COMIC BAG & BOARD !";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      heading.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 290); // Adjust typing speed (milliseconds)
+    }
+  }
+
+  typeWriter(); // Start the typing effect
+</script>
+<!-- <section class="Characters-section" id="Heros">
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+  
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+  
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+</section>
+
+
+
+<section class="Characters-section" id="Villans">
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+  
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+  
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+  
+  <div class="character-card">
+    <img src="" alt="">
+    <p class="character-name"></p>
+  </div>
+
+</section>
+
+
+ -->
+
+
 {% endblock %}

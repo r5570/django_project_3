@@ -8,6 +8,7 @@ Order History
 <h1>Order History</h1>
 
 {% if orders %}
+<section class="cart_section">
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -39,6 +40,7 @@ Order History
         {% endfor %}
     </tbody>
 </table>
+</section>
 {% else %}
 <p>No orders found.</p>
 <a href="{% url 'productpage' %}" class="btn btn-primary">Start Shopping</a>

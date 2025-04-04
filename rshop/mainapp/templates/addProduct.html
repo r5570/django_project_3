@@ -3,10 +3,21 @@
 Add Product
 {% endblock %}
 {% block content %}
+<style>
+    button{
+        width: 99%;
+        background-color: black;
+        color: white;
+        height: 40px;
+        border-radius: 12px;
+    }
+</style>
+<div class="form-div">
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">add product</button>
+    <button type="submit">ADD PRODUCT</button>
 </form>
+</div>
 
 {% endblock %}

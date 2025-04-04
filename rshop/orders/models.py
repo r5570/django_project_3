@@ -106,6 +106,6 @@ class OrderDetails(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"Detail for order {self.order.id} - Product: {self.cart_item.product.name}"
+        return f"Detail for order {self.order.id} - Product: {self.order_item.name} - Ordered by {self.order.user.username.capitalize()}"
     
     

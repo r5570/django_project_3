@@ -53,7 +53,8 @@ def order_history(request):
 def order_detail(request, order_id):
     """Display details of a specific order."""
     order = get_object_or_404(Order, id=order_id, user=request.user)
-    return render(request, 'order_detail.html', {'order': order})
+    context = {'order': order}
+    return render(request, 'order_detail.html', context)
 
 @login_required
 def add_address(request):

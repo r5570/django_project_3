@@ -7,78 +7,248 @@
 {% block content %}
 {% if cart_items %}
 
+<style>
+       .cart_section {
+        padding: 40px 20px;
+        background-color: whitesmoke;
+        color: #e0e0e0;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .cart_flex {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        border: 1px black solid;
+    }
+
+    .table th, .table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #333;
+    }
+
+    .table th {
+        font-weight: 600;
+    }
+
+    .table img {
+        max-height: 80px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .table a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .table a:hover {
+        text-decoration: underline;
+    }
+
+    .grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        width: 150px;
+    }
+
+    .row button, .row p {
+        padding: 8px 12px;
+        margin: 0 5px;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+
+    .row button {
+        background-color: #333;
+        color: #e0e0e0;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .row button:hover {
+        background-color: #444;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-outline-secondary {
+        border: 1px solid #555;
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #555;
+    }
+
+    .emptycart {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    #shopmore {
+        background-color: #007bff;
+        color: white;
+        margin-top: 20px;
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0;
+    }
+
+    #shopmore:hover {
+        background-color: #0056b3;
+    }
+
+    #Total_price strong {
+        color: #007bff;
+    }
+
+    @media (max-width: 768px) {
+        .cart_flex {
+            width: 100%;
+        }
+
+        .table, .table thead, .table tbody, .table th, .table td, .table tr {
+            display: block;
+        }
+
+        .table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .table tr {
+            border: 1px solid #333;
+            margin-bottom: 10px;
+        }
+
+        .table td {
+            border: none;
+            position: relative;
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .table td:before {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .table td:nth-of-type(1):before { content: ""; }
+        .table td:nth-of-type(2):before { content: "PRODUCT"; }
+        .table td:nth-of-type(3):before { content: "PRICE"; }
+        .table td:nth-of-type(4):before { content: "QUANTITY"; }
+        .table td:nth-of-type(5):before { content: "SUB TOTAL"; }
+        .table td:nth-of-type(6):before { content: ""; }
+
+        .row {
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+</style>
+
+
+</style>
+
 <section class="cart_section">
 
+    <section class="cart_flex
+">
+        <table class="table">
+            <thead>
+                <th>
 
-    <table class="table">
-        <thead>
-            <th>
+                </th>
+                <th>
+                    PRODUCT
+                </th>
+                <th>
+                    PRICE
+                </th>
+                <th>
+                    QUANTITY
+                </th>
+                <th>
+                    SUB TOTAL
+                </th>
+                <th>
 
-            </th>
-            <th>
-                PRODUCT
-            </th>
-            <th>
-                PRICE
-            </th>
-            <th>
-                QUANTITY
-            </th>
-            <th>
-                SUB TOTAL
-            </th>
-            <th>
+                </th>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr class="h-10" id="cart-item-{{item.id}}">
+                    <td class="w-auto">
+                        {% if item.product.pic %}
+                        <img src="{{item.product.pic.url}}" height="20px" alt="An image of {{item.product.name}}">
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'prod_details' item.product.id %}">{{item.product.name }}</a>
+                    </td>
+                    <td>
+                        {{item.product.price}}
+                    </td>
+                    <td class="grid">
+                        <div class="row w-100">
+                            <button
+                                onclick="updateCart('{% url 'remove_quantity' item.id %}', {{ item.id }}, false, '{{ csrf_token }}')"
+                                class="btn btn-outline-secondary col align-middle">
+                                -
+                            </button>
+                            <p id="quantity-{{ item.id }}" class="col align-middle text-center">{{item.quantity}}</p>
+                            <button
+                                onclick="updateCart('{% url 'add_quantity' item.id %}', {{ item.id }}, true, '{{ csrf_token }}')"
+                                class="btn btn-outline-secondary col align-middle">+</button>
+                        </div>
+                    </td>
+                    <td id="total-price-{{ item.id }}">
+                        {{item.get_total_price}}
+                    </td>
+                    <td>
+                        <a href="{% url 'del_cart' item.id %}" class="btn ">REMOVE FROM CART</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th colspan="4" class="text-center" id="Total">TOTAL</th>
+                    <td id="Total_price"><strong>Rs.<span id="overall-total">{{ total_price }}</span></strong></td>
+                    <td><a href="{% url 'create_order' %}" class="btn">PLACE YOUR ORDER</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-            </th>
-        </thead>
-        <tbody>
-            {% for item in cart_items %}
-            <tr class="h-10" id="cart-item-{{item.id}}">
-                <td class="w-auto">
-                    {% if item.product.pic %}
-                    <img src="{{item.product.pic.url}}" height="20px" alt="An image of {{item.product.name}}">
-                    {% endif %}
-                </td>
-                <td>
-                    <a href="{% url 'prod_details' item.product.id %}">{{item.product.name }}</a>
-                </td>
-                <td>
-                    {{item.product.price}}
-                </td>
-                <td class="grid">
-                    <div class="row w-100">
-                        <button
-                            onclick="updateCart('{% url 'remove_quantity' item.id %}', {{ item.id }}, false, '{{ csrf_token }}')"
-                            class="btn btn-outline-secondary col align-middle">
-                            -
-                        </button>
-                        <p id="quantity-{{ item.id }}" class="col align-middle text-center">{{item.quantity}}</p>
-                        <button
-                            onclick="updateCart('{% url 'add_quantity' item.id %}', {{ item.id }}, true, '{{ csrf_token }}')"
-                            class="btn btn-outline-secondary col align-middle">+</button>
-                    </div>
-                </td>
-                <td id="total-price-{{ item.id }}">
-                    {{item.get_total_price}}
-                </td>
-                <td>
-                    <a href="{% url 'del_cart' item.id %}" class="btn btn-danger">Remove from Cart</a>
-                </td>
-            </tr>
-            {% endfor %}
-            <tr>
-                <th colspan="4" class="text-center" id="Total">TOTAL</th>
-                <td class="bg-secondary" id="Total_price" style="background-color: none;"><strong>Rs.<span id="overall-total">{{ total_price }}</span></strong></td>
-                <td><a href="{% url 'create_order' %}" class="btn btn-primary" style="background-color:white; border:none; color:black;">Place Your Order</a></td>
-            </tr>
-        </tbody>
-    </table>
 
+    {% else %}
+    <p class="emptycart">Cart is Empty..<small><i class="bi bi-emoji-expressionless"></i></small></p>
+    {% endif %}
+
+    <a href="{% url 'productpage' %}" class="btn btn-sm btn-primary" id="shopmore">SHOP MORE</a>
 </section>
-
-{% else %}
-<p class="emptycart">Cart is Empty..<small><i class="bi bi-emoji-expressionless"></i></small></p>
-{% endif %}
-
-<a href="{% url 'productpage' %}" class="btn btn-sm btn-primary"  id="shopmore">Shop More</a>
 {% endblock %}

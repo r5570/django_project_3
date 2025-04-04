@@ -10,9 +10,8 @@ from django.views.generic import CreateView,ListView,DetailView,UpdateView,Delet
 
 
 def home(request):
-    home=''
     context={
-
+        'page' : 'home'
     }
     template = loader.get_template('index.html')
     return HttpResponse(template.render(context,request))
@@ -91,11 +90,13 @@ def searchView(request):
 class EditProduct(UpdateView):
     model=Product
     template_name='editProduct.html'
+    fields = '__all__'
     success_url=reverse_lazy('homepage')
 
 
 # 4. D - Delte
 class DelProduct(DeleteView):
     model=Product
+    fields = '__all__'
     template_name='delProduct.html'
     success_url=reverse_lazy('homepage')

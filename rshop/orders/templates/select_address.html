@@ -6,7 +6,9 @@
 
 {% block content %}
 
-<form method="post">
+<section id="select_address">
+
+<form method="post" >
     {% csrf_token %}
     <h3>Select an Address</h3>
     <ul>
@@ -19,9 +21,9 @@
         </li>
         {% endfor %}
     </ul>
-    <button type="submit" class="btn btn-primary">Select Address</button>
+    <button type="submit" class="btn btn-primary" id="sa_button">SELECT ADDRESS</button>
 </form>
-<a href="{% url 'add_address'  %}?next={{request.path}}" class="btn btn-secondary">Add address</a>
-
+<a href="{% url 'add_address'  %}?next={{request.path}}" class="btn btn-secondary" id="aa_button">ADD ADDRESS</a>
+</section>
 
 {% endblock %}

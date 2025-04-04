@@ -2,375 +2,647 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 
 /* Styling for Base.html  */
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: whitesmoke; */
+    color: black;
+}
+
 header {
+    line-height: 1.6;
+    padding: 0.10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* z-index: 1; */
+    background-color: white;
+    /* margin-top: -20px; */
 
+}
 
-    .container-fluid {
-        /* background-color: rgb(109, 163, 29); */
-        background-color:rgb(243, 236, 22);
-        position: absolute;
-        filter: contrast(1);
-        height: 160px;
-        z-index: 2;
+nav {
 
-
-
-        .navbar-brand {
-
-            color: white;
-            margin-top: 65px;
-            font-size: 1.90rem;
-            font-family: "Josefin Sans", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 900;
-            font-style: normal;
-
-
-            Big{
-
-                font-size: 2.0rem;
-            }
-        }
+    position: relative;
+    padding: 0.20rem;
+    text-align: center;
+    /* margin-top: -5px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding-bottom: 20px;
 
 
 
-        .nav-link {
+    a {
 
-            color: white;
-            /* font-size: 1.20rem; */
-            filter: saturate(120%);
-            font-size: 0.95rem;
-          
-            margin-top: 65px;
-            margin-left: 5px;
-            margin-right: 5px;
-            font-family: "Josefin Sans", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: weight;
-            font-style: normal;
-
-        }
-
-
-        .nav-link:hover {
-
-            /* text-decoration: line-through; */
-            border-bottom: 3px solid white;
-            transition-duration: 2s;
-        }
+        text-decoration: none;
+        padding: 0.65rem 1.20rem;
+        margin: 0 0.5rem;
+        font-weight: 500;
+        font-size: 0.70rem;
+        color: black;
 
 
 
-        /* search icon */
+        form {
 
-
-        #search {
-
-            margin-top: 55px;
-            height: 25px;
-            width: 300px;
-
-            input {
-
-                font-size: 0.80rem;
-                font-family: "Josefin Sans", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: weight;
-                font-style: normal;
-                font-weight: 900;
-            }
+            display: inline;
 
             button {
-
-                border: none;
-                color: white;
-                font-size: 0.90rem;
-                font-weight: 700;
-                margin-top: -10px;
+                background-color: transparent;
+                color: black;
+                border: transparent;
+                width: 30px;
             }
-        }
 
+        }
+    }
+
+
+
+    #Logo {
+
+        width: 100px;
+        height: 100px;
+        background-image: url(../images/CNC.png);
+        background-size: cover;
+        text-decoration: none;
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        left: 125px;
+        top: -25px;
 
     }
+
+
+
+
+    #search {
+
+        height: 30px;
+        margin-top: 16px;
+
+        button {
+
+            font-size: 10px;
+            width: 60px;
+            height: 30px;
+        }
+    }
+
 
 }
 
 
-body {
-    /* background-color:rgb(10, 10, 10); */
+.nav-item:hover {
+    /* border-bottom: 2px solid black; */
+    /* background-color: rgba(27, 22, 22, 0.842);
+    color: white;
+    transition-duration: 40ms; */
+    border: 1px solid black;
+    transition-duration: 40ms;
 
-
-    /* Styling for Home page */
-
-    /* #bg_image {
-
-        background-image: url(../images/Marvel_background_image.jpg);
-        height: 90vh;
-        background-size: cover;
-     
+    /* button {
+        color: white;
     } */
+}
 
-    /* .background-video {
 
 
-        .back-video {
+.mini_nav {
 
-            height: 100vh;
-            width: 110vw;
-            object-fit: cover;
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            z-index: -1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: white;
+}
+
+.mini_nav {
+
+    a:hover {
+
+        border: 1px solid black;
+        transition-duration: 40ms;
+    }
+}
+
+
+
+
+.Home-content {
+    background-color: white;
+    color: black;
+
+
+    .Home-image {
+
+        background: url(../images/Bat_Bgi.jpeg);
+        height: 68vh;
+        background-size: contain;
+        background-position: center;
+        z-index: -2;
+        /* margin-top: -50px; */
+
+    }
+
+    .hero {
+
+
+        height: 50vh;
+        color: black;
+        text-align: center;
+        padding: 6rem 2rem;
+
+
+
+
+        h1 {
+            font-size: 3.80rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: -30px;
+            z-index: 2;
 
         }
-    } */
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+
+        button {
+
+            display: none;
+            width: 190px;
+            height: 46px;
+            /* border-radius: 24px; */
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            font-weight: 700;
+            font-size: 0.80rem;
+        }
+    }
 
 
 
 
-
-    main {
-
-
-        width: 100%;
-        margin-top: 51px;
-        margin-bottom: 20px;
+    .blank {
+        height: 60px;
+        background-color: rgb(71, 154, 186);
+    }
 
 
+    /* Home Heading */
+
+      
 
 
-        /* Styling for Home page */
+}
 
 
-        /* carousel */
+main {
 
-        #carouselExampleAutoplaying {
+    h2 {
+        margin-top: 50px;
+    }
 
-
-            .carousel-inner {
-
-                position: relative;
-                z-index: -1;
-                margin-top: -2vh;
+    .N_section {
 
 
-
-                #image1 {
-                    background-image: url(../images/deadpool--wolverine-.jpg);
-                    height: 100vh;
-                    background-size: cover;
-                    z-index: -1;
-                    filter: contrast(1.15);
+        margin-top: 1vh;
+        margin-bottom: 72px;
 
 
-                }
-
-                #image2 {
-                    background-image: url(../images/Joker.jpg);
-                    height: 100vh;
-                    background-size: cover;
-                    filter: contrast(1.15);
-                    z-index: -1;
 
 
-                }
+        .New_division {
+            background-color: white;
+            padding-bottom: 90px;
 
 
-                #image3 {
-                    background-image: url(../images/Red_Hulk.jpg);
-                    height: 100vh;
-                    background-size: cover;
-                    filter: contrast(1.15);
-                    z-index: -1;
+            h2 {
 
+                padding-top: 50px;
+                text-align: center;
+                display: block;
+                color: black;
 
-                }
             }
         }
 
 
 
-        .Home-section {
 
+        .N_cards {
             display: flex;
             justify-content: space-evenly;
-            z-index: 2;
-           
+            flex-wrap: wrap;
+            flex-direction: row;
+            row-gap: 40px;
+            margin-top: 60px;
 
-            .Home_buttons {
+            .N_card {
 
-                color:white;
-                background-color: transparent;
+                height: 390px;
+                width: 200px;
+                border: 1px solid;
                 border: none;
-                font-size: 1.30rem;
-                top: 50vh;
-                position: absolute;
-                font-family: "Josefin Sans", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 700;
-                font-style: normal;
-            }
-        }
+                box-shadow: 0.3px 0.4px 0.5px;
 
 
-    }
-
-
-
-    #Home-heading1{
-
-        font-size: 8rem;
-    
-    }
-
-
-    /* Styling for products page */
-
-
-
-    .Product_section {
-
-        background-color: rgb(195, 178, 178);
-        margin: auto;
-    }
-
-    #card-collection {
-        max-width: 80%;
-        margin: auto;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        column-gap: 20px;
-
-        div.card {
-
-            margin-top: 50px;
-            max-width: 250px;
-            height: 300px;
-            border-radius: 10px;
-            border: 1px solid;
-            overflow: hidden;
-            transition-duration: 1s;
-
-
-            img {
-                object-fit: cover;
-                height: 75%;
-                padding: 8px;
-                /* filter: saturate(0%); */
-                transition-duration: 2s;
-
-            }
-
-            .card-body {
-                height: 35%;
-                position: relative;
-                color: black;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-style: italic;
-
-                button {
-
-
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 50%;
-                    font-size: 1.50rem;
-                    /* font-weight: 600; */
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    left: 40%;
-                    bottom: 15px;
-                    background-color: black;
-                }
-
-                button:hover {
-                    background-color: rgb(27, 172, 44);
-                    color: white;
-                    transition-duration: 30ms;
-                }
-
-                a {
-                    text-decoration: none;
-                }
-
-                .card-title {
-
-                    color: black;
-                    font-size: 0.95rem;
-                    font-weight: 900;
-                    font-family: "Josefin Sans", sans-serif;
-                    font-optical-sizing: auto;
-                    font-weight: weight;
-                    font-style: normal;
-
-
-
-                }
-
-
-
-                #price {
-
-                    font-weight: 700;
-                    font-size: 0.80rem;
-                    bottom: 40px;
-
-                }
-            }
-        }
-
-
-    }
-
-    .card:hover {
-
-        box-shadow: 2px 2px 2px 2px;
-        transition-duration: 1s;
-        margin-top: -1%;
-
-        img {
-            filter: saturate(normal);
-            transform: scale(1.1);
-            transition-duration: 3s;
-            object-fit: cover;
-        }
-    }
-
-    /* Product details page */
-
-    div.container-fluid {
-        .row {
-            .col {
-                width: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-
-                .img {
+                img {
                     width: 100%;
-                    background-color: black;
+                    height: 70%;
+                    object-fit: cover;
+                }
 
-                    img {
-                        width: 100%;
-                        aspect-ratio: 1/1;
-                        object-fit: contain;
+                .N_cardbody {
+
+                    position: relative;
+                    height: 30%;
+                    width: 100%;
+                    /* background-color: red; */
+                    text-align: center;
+
+                    h4 {
+                        display: inline;
+                        text-align: center;
+                        font-size: 0.80rem;
+                        font-weight: 700;
+                    }
+
+
+                    button {
+                        margin-top: 40px;
+                        width: 80%;
+                        border-radius: 18px;
+                        height: 36px;
+                        font-size: 0.80rem;
+                        background-color: transparent;
+                        font-weight: 400;
+                    }
+
+
+                    button:hover {
+
+                        background-color: black;
+                        color: white;
+                        border: none;
                     }
                 }
             }
+
+
+            /* .N_card:hover {
+
+                    height: 265px;
+                    width: 200px;
+                    box-shadow: 1px 1px 1px 1px;
+                    transition-duration: 60ms;
+                    animation-delay: 10ms;
+                    margin-top: -20px;
+                } */
+        }
+
+
+
+    }
+
+
+
+    .Movies{
+
+        h2{
+            text-align: center;
+        }
+    }
+
+    .Movie{
+
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top:40px;
+        background-color: black;
+
+
+      
+        .Movie_video{
+
+            display: flex;
+            justify-content: center;
+            width: 40%;
+            height: 360px;
+            padding: 2.90rem;
+
+            iframe{
+
+                display: inline-block;
+            }
+
+        }
+
+        .Movie_content {
+
+            width: 50%;
+            color:white;
+            padding: 1.90rem;
+            font-size: 0.90rem;
+
+
+            h3{
+                Big{
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+            }
+           
+        }
+    }
+
+
+
+    /* Styling for About section of home page */
+
+    .about{
+
+        padding: 4rem 2rem;
+        text-align: center;
+
+
+        h2{
+
+            font-size: 1.20rem;
+        }
+
+
+        .about_div{
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .about_image{
+
+            background-image: url(../images/CNC.png);
+            width: 100%;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+           
+        }
+
+        p {
+            font-size: 0.90rem;
+        }
+    }
+
+
+
+
+
+
+    /* Styling for contact section of home page */
+
+
+    .contact {
+        padding: 1rem;
+        text-align: center;
+        background-color: black;
+        color: white;
+
+
+        p {
+            font-size: 0.90rem;
+        }
+    }
+
+
+
+    .form {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: -90px;
+        margin-bottom: 90px;
+        background-color: black;
+        padding-bottom: 50px;
+
+
+        form{
+
+           
+           
+            color:white;
+            padding:20px;
+            padding-top: 80px;
+          
+
+            label{
+                display: block;
+                margin-bottom: 20px;
+                font-size: 0.80rem;
+                font-weight: 600;
+                width: 300px;
+                
+            }
+            
+            input{
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 20px; 
+                width: 300px;
+                font-size: 0.80rem;
+            }
+
+            textarea{
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 20px; 
+                height: 70px;
+                width: 300px;
+            }
+
+
+            button{
+
+                width: 100%;
+                height: 36px;
+                font-size: 0.80rem;
+                border-radius: 18px;
+                background-color: black;
+                color: white;
+                border: 1px solid white;
+            }
+
+        }
+
+    }
+
+
+}
+
+
+    /* Comic cards */
+
+
+    /* Styling for Understanding section of Home page */
+
+   
+
+/* Styling for products page */
+
+
+
+.Product_section {
+
+    background-color: rgb(195, 178, 178);
+    z-index: -1;
+
+
+}
+
+#card-collection {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 10px;
+
+    div.card {
+
+        margin-top: 50px;
+        max-width: 230px;
+        height: 396px;
+        border-radius: 10px;
+        border: 1px solid;
+        overflow: hidden;
+        transition-duration: 1s;
+        /* filter: saturate(0%); */
+
+
+        img {
+            object-fit: cover;
+            height: 60%;
+            padding: 6px;
+            transition-duration: 2s;
+
+        }
+
+        .card-body {
+            height: 30%;
+            position: relative;
+            color: black;
+
+
+            button {
+
+
+                width: 90%;
+                height: 40px;
+                /* border-radius: 50%; */
+                font-size: 0.80rem;
+                position: absolute;
+                /* left: 40%; */
+                bottom: 15px;
+                background-color: black;
+            }
+
+            button:hover {
+                background-color: rgb(27, 172, 44);
+                color: white;
+                transition-duration: 30ms;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .card-title {
+
+                color: black;
+                font-size: 0.75rem;
+                padding-top: -20px;
+                font-weight: 900;
+                text-align: center;
+
+
+            }
+
+
+
+            #price {
+
+                font-weight: 800;
+                font-size: 0.90rem;
+                bottom: 0px;
+
+            }
+
+
+            #desc {
+
+                font-size: 0.20rem;
+            }
+
+        }
+
+
+    }
+
+
+}
+
+.card:hover {
+
+    box-shadow: 2px 2px 2px 2px;
+    transition-duration: 1s;
+    margin-top: -1%;
+
+    img {
+        filter: saturate(normal);
+        transform: scale(1.1);
+        transition-duration: 3s;
+        object-fit: cover;
+    }
+}
+
+/* Product details page */
+
+div.container-fluid {
+    .row {
+        .col {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            .img {
+                width: 100%;
+
+
+                img {
+                    width: 60%;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                }
+            }
         }
     }
 }
+
 
 
 
@@ -380,93 +652,12 @@ body {
 /* Styling for View cart page */
 
 
-
-
-
-.cart_section {
-
-    margin-top: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-}
-
-
-.table {
-
-    border: 2px solid black;
-    max-width: 70%;
-    height: auto;
-    border-radius: 20px;
-
-    border-radius: 20px;
-
-
-    thead {
-
-        border: 2px solid;
-        height: 60px;
-
-    }
-
-    th {
-        font-size: 0.80rem;
-        font-weight: 500;
-        color: white;
-        /* background-color: black; */
-        background-color: rgb(45, 12, 13);
-    }
-
-
-
-    #Total {
-
-        background-color: rgb(27, 172, 44);
-        color: white;
-    }
-
-    #Total_price {
-
-        background-color: black;
-    }
-
-
-
-    td {
-        font-size: 0.86rem;
-        font-weight: 700;
-
-
-        a {
-
-            font-size: 0.86rem;
-            font-weight: 700;
-
-        }
-
-
-        .row {
-
-            button {
-
-                border: none;
-                font-weight: 800;
-                color: black;
-            }
-        }
-    }
-}
-
-
-
 .emptycart {
 
     text-align: center;
-    font-size: 8rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 700;
-    margin-top: 15px;
+    font-size: 5rem;
+
+    margin-top: 125px;
 
     small {
 
@@ -476,28 +667,11 @@ body {
 }
 
 
-#shopmore {
-
-    margin-top: 100px;
-    font-size: 1.20rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-
-}
-
-
-
-
-/* Styling for Login & Registration forms */
-
 .form-div {
 
     margin-top: 120px;
     font-size: 0.90rem;
 }
-
-
-
 
 
 
@@ -507,7 +681,118 @@ body {
 
 h1 {
 
-    margin-top: 120px;
+    margin-top: 140px;
     font-size: 2rem;
     font-weight: 800;
+    text-align: center;
+}
+
+
+.order_section {
+
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 10%;
+    background-color: whitesmoke;
+
+    table {
+
+        border: 1px solid black;
+        margin-top: -130px;
+
+
+        button{
+            
+            width: 50%;
+        }
+    }
+
+}
+
+
+
+
+/* Select address page */
+
+#select_address {
+
+    margin-top: 90px;
+    font-size: 1.20rem;
+    color: black;
+
+    #sa_button {
+
+        width: 190px;
+        font-size: 0.70rem;
+        font-weight: 600;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #aa_button {
+
+        width: 190px;
+        font-size: 0.70rem;
+        font-weight: 600;
+        padding: 10px;
+        margin: 10px;
+    }
+
+}
+
+
+/* Add address page */
+
+#add_address {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+
+
+    form {
+
+        font-size: 0.80rem;
+        font-weight: 700;
+        width: 60%;
+        padding: 80px;
+        background-color: #08394d;
+        border-radius: 20px;
+        color: white;
+
+        input {
+            font-size: 0.80rem;
+
+        }
+
+
+        button {
+
+            width: 100%;
+            font-size: 0.70rem;
+            font-weight: 700;
+            height: 50px;
+        }
+    }
+}
+
+.checkout_body {
+
+    background-color: red;
+}
+
+
+.form-div {
+
+    display: flex;
+    justify-content: center;
+
+    form {
+        margin-top: -100px;
+        border: 1px solid;
+        padding: 2rem;
+        border-radius: 0.40rem;
+    }
 }

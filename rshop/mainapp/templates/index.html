@@ -5,108 +5,8 @@ Home page
 {% block content %}
 
 <style>
-  .footer-bulletin {
-    background-color: #1d7192;
-    /* background-color: rgb(15, 15, 15); */
-    overflow: hidden;
-    padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    height: 50px;
-
-  }
-
-  .scroll-container {
-    white-space: nowrap;
-    display: inline-block;
-    animation: scroll 20s linear infinite;
-    /* Adjust speed here */
-  }
-
-  .scroll-content {
-    display: inline-block;
-  }
-
-  .scroll-content span {
-    display: inline-block;
-    font-size: 1.10rem;
-    color: white;
-    font-weight: 400;
-
-
-
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-      transition-duration: 20s;
-    }
-  }
-
-
-  .hero{
-    display: block;
-    height: 20vh;
-    border: 1px solid;
-  }
-
-  .hero:hover {
-
-    #hero-title {
-      overflow: hidden;
-      border-right: 2px solid white;
-      /* simulate cursor */
-      white-space: nowrap;
-      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
-      width: 0;
-      animation-fill-mode: forwards;
-    }
-
-    #hero-paragraph {
-      opacity: 0;
-      animation: fadeIn 1s ease-in forwards;
-      animation-delay: 3s;
-      /* starts after title animation finishes */
-    }
-
-    /* Typing effect */
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
-      }
-    }
-
-    /* Blinking cursor */
-    @keyframes blink-caret {
-
-      from,
-      to {
-        border-color: transparent;
-      }
-
-      50% {
-        border-color: white;
-      }
-    }
-
-    /* Fade in paragraph */
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-  }
+ 
+ 
 </style>
 <section class="Home-content">
   <div class="Home-image">
@@ -250,6 +150,7 @@ Home page
 
     </section>
 
+    
     <section id="contact" class="contact">
       <h2>CONTACT US</h2>
       <p>Email: contact@cosmicnexuscomics.com</p>
@@ -259,28 +160,9 @@ Home page
       <p>Or</p>
       <p>"Got a question, comment, or just want to say hello? We'd love to hear from you! Please fill out the form below
         or send us an email directly through Website. We aim to respond to all inquiries within 48 hours."</p>
-       <a href="{% url 'mail_page' %}"> <button class="btn btn-primary"></button></a>
+       <a href="{% url 'mail_page' %}"> <button class="">MAIL NOW</button></a>
     </section>
-      <!-- <section class="footer-bulletin">
-      <div class="scroll-container">
-        <div class="scroll-content">
-          <span><i class="bi bi-megaphone"></i> New arrival: X-Men facsimile edition!</span>
-          <span><i class="bi bi-fire"></i> Hot off the press: Batman: Three Jokers finale!</span>
-          <span><i class="bi bi-sparkles"></i> Deal alert: 20% off all silver age Marvel!</span>
-          <span><i class="bi bi-book"></i> Explore: The cosmic odyssey of Galactus!</span>
-          <span><i class="bi bi-shield-shaded"></i> Pre-order: Captain America #1 reborn series!</span>
-          <span><i class="bi bi-lightning-fill"></i> Flash sale: DC's Crisis on Infinite Earths collection!</span>
-          <span><i class="bi bi-person-arms-up"></i> Community spotlight: Fan art showcase this week!</span>
-          <span><i class="bi bi-calendar-event"></i> Event: Meet writer Tom King next month!</span>
-          <span><i class="bi bi-chat-dots"></i> Discussion: What's your favorite Spider-Verse story?</span>
-          <span><i class="bi bi-truck"></i> Free shipping on orders over $50!</span>
-          <span><i class="bi bi-stars"></i> New digital exclusives: Read now!</span>
-          <span><i class="bi bi-question-circle"></i> Quiz: Test your Marvel trivia!</span>
-          <span><i class="bi bi-graph-up"></i> Trending: Indie comic spotlight this week!</span>
-          <span><i class="bi bi-joystick"></i> Gamer edition: Comic based video games in stock!</span>
-        </div>
-      </div>
-    </section> -->
+    
   </section>
   <footer class="py-5">
     <div class="row">

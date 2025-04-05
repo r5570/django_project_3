@@ -1,33 +1,103 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %} <!-- Instructing the template to load the static files-->
 
 <!-- The django template code to show all products in the page starts here -->
 
+<style>
+  .footer-bulletin {
+    background-color: #1d7192;
+    /* background-color: rgb(15, 15, 15); */
+    overflow: hidden;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+
+  }
+
+  .scroll-container {
+    white-space: nowrap;
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+    /* Adjust speed here */
+  }
+
+  .scroll-content {
+    display: inline-block;
+  }
+
+  .scroll-content span {
+    display: inline-block;
+    font-size: 1.10rem;
+    color: white;
+    font-weight: 400;
+
+
+
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+      transition-duration: 20s;
+    }
+  }
+</style>
+
 
 <section class="Product_section">
-<div class="" id="card-collection">
-  {% for product in prods %}
-  <div class="card" style="width: 18rem;">
-    {% if product.pic %}
-    <img src="{{ product.pic.url }}" class="card-img-top" alt="...">
-    {% else %}
-    no picture
-    {% endif %}
-    <div class="card-body">
-      <a href="{% url 'prod_details' product.id %}">
-        
-        
-        <h5 class="card-title">{{ product.name }}</h5>
-      </a>
-      <p class="card-text" id="desc" >{{product.desc}}</p>
-      <p class="card-text" id="price">&#8377;{{ product.price }} <small> - /Only</small></p>
-      <a href="{% url 'add_to_cart' product.pk %}" ><button class="btn btn-primary"> ADD TO CART  </button></a>
+  <div class="" id="card-collection">
+    {% for product in prods %}
+    <div class="card" style="width: 18rem;">
+      {% if product.pic %}
+      <img src="{{ product.pic.url }}" class="card-img-top" alt="...">
+      {% else %}
+      no picture
+      {% endif %}
+      <div class="card-body">
+        <a href="{% url 'prod_details' product.id %}">
+
+
+          <h5 class="card-title">{{ product.name }}</h5>
+        </a>
+        <p class="card-text" id="desc">{{product.desc}}</p>
+        {% if product.price > 100 %}
+        <p class="card-text" id="price">&#8377;{{ product.price }} <small>/ Only</small></p>
+        {% else %}
+        <p class="card-text" id="price">&#8377;{{ product.price }} <small id="Offer">/ On Offer</small></p>
+        {% endif %}
+
+        <a href="{% url 'add_to_cart' product.pk %}"><button class="btn btn-primary"> ADD TO CART </button></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="footer-bulletin">
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <span><i class="bi bi-megaphone"></i> New arrival: X-Men facsimile edition!</span>
+      <span><i class="bi bi-fire"></i> Hot off the press: Batman: Three Jokers finale!</span>
+      <span><i class="bi bi-sparkles"></i> Deal alert: 20% off all silver age Marvel!</span>
+      <span><i class="bi bi-book"></i> Explore: The cosmic odyssey of Galactus!</span>
+      <span><i class="bi bi-shield-shaded"></i> Pre-order: Captain America #1 reborn series!</span>
+      <span><i class="bi bi-lightning-fill"></i> Flash sale: DC's Crisis on Infinite Earths collection!</span>
+      <span><i class="bi bi-person-arms-up"></i> Community spotlight: Fan art showcase this week!</span>
+      <span><i class="bi bi-calendar-event"></i> Event: Meet writer Tom King next month!</span>
+      <span><i class="bi bi-chat-dots"></i> Discussion: What's your favorite Spider-Verse story?</span>
+      <span><i class="bi bi-truck"></i> Free shipping on orders over $50!</span>
+      <span><i class="bi bi-stars"></i> New digital exclusives: Read now!</span>
+      <span><i class="bi bi-question-circle"></i> Quiz: Test your Marvel trivia!</span>
+      <span><i class="bi bi-graph-up"></i> Trending: Indie comic spotlight this week!</span>
+      <span><i class="bi bi-joystick"></i> Gamer edition: Comic based video games in stock!</span>
     </div>
   </div>
-  {% endfor %}
-</div>
 </section>
 <!-- Django template code ends here -->
 

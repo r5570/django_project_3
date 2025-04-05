@@ -108,7 +108,7 @@ nav {
      border-bottom: 2px solid black; 
     background-color: rgba(27, 22, 22, 0.842);
     color: white;
-    transition-duration: 50ms;
+    transition-duration: 20ms;
     animation-timing-function: linear; 
    
     /* border: 1px solid black;
@@ -397,7 +397,7 @@ position: relative;
         justify-content: space-between;
         flex-wrap: wrap;
         margin-top:40px;
-        background-color: black;
+        /* background-color: black; */
 
 
       
@@ -419,15 +419,15 @@ position: relative;
         .Movie_content {
 
             width: 50%;
-            color:white;
+            /* color:white; */
             padding: 1.90rem;
-            font-size: 0.90rem;
+            font-size: 1rem;
 
 
             h3{
                 Big{
                     font-weight: 600;
-                    font-size: 1rem;
+                    font-size: 1.20rem;
                 }
             }
            
@@ -483,13 +483,20 @@ position: relative;
         padding: 1rem;
         text-align: center;
        
-        h2{
-
-        }
+       
 
         p {
             font-size: 0.90rem;
            
+        }
+
+        button{
+
+            font-size: 1rem;
+            width: 180px;
+            padding: 0.10rem;
+            color: white;
+            background-color: black;
         }
     }
 
@@ -770,6 +777,13 @@ position: relative;
                 small{
 
                     color: green;
+                    font-weight: 400;
+                    font-size: 0.80rem;
+                }
+
+
+                #Offer{
+                    color: Red;
                     font-weight: 400;
                     font-size: 0.80rem;
                 }

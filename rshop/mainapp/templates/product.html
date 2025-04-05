@@ -21,8 +21,8 @@
         
         <h5 class="card-title">{{ product.name }}</h5>
       </a>
-      <p class="card-text" id="desc" >{{ prod.desc }}</p>
-      <p class="card-text" id="price">&#8377;{{ product.price }}</p>
+      <p class="card-text" id="desc" >{{product.desc}}</p>
+      <p class="card-text" id="price">&#8377;{{ product.price }} <small> - /Only</small></p>
       <a href="{% url 'add_to_cart' product.pk %}" ><button class="btn btn-primary"> ADD TO CART  </button></a>
     </div>
   </div>

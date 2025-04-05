@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="form">
+    <form action="https://api.web3forms.com/submit" method="POST" id="contact_form">
+
+      <input type="hidden" name="access_key" value="c58e3323-2b38-446c-ae1c-8b4c7583d092">
+
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="message">Message:</label>
+      <textarea name="message" id="message" required></textarea>
+
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+      <button type="submit">SEND MAIL</button>
+
+    </form>
+
+
+  </section>
+
+
+{% endblock %}

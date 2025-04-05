@@ -29,3 +29,19 @@
         .catch(error => console.error('Error:', error));
     }
     
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotIcon = document.getElementById('chatbot-icon');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const closeChatbotButton = document.getElementById('close-chatbot');
+      
+        chatbotIcon.addEventListener('click', function() {
+          chatbotContainer.style.display = 'block';
+        });
+      
+        if (closeChatbotButton) {
+          closeChatbotButton.addEventListener('click', function() {
+            chatbotContainer.style.display = 'none';
+          });
+        }
+      });

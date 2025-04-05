@@ -24,7 +24,7 @@
                     {{ prod.desc }}
                 </p>
                 <span>
-                    &#8377; {{ prod.price }}
+                    &#8377; {{ prod.price }} <small>- /Only</small>
                 </span>
                 
                 {% if user.is_staff %}
@@ -37,8 +37,8 @@
                     </div>
                 </div>
                 {% else %}
-                <a href = "{% url 'add_to_cart' prod.id %}" class="btn btn-primary">
-                    Add to Cart
+                <a href = "{% url 'add_to_cart' prod.id %}" class="btn">
+                    ADD TO CART
                 </a>
                 {% endif %}
             </div>

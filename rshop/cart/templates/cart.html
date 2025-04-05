@@ -104,18 +104,7 @@
         margin-bottom: 20px;
     }
 
-    #shopmore {
-        background-color: #007bff;
-        color: white;
-        margin-top: 20px;
-        display: block;
-        width: fit-content;
-        margin: 20px auto 0;
-    }
-
-    #shopmore:hover {
-        background-color: #0056b3;
-    }
+   
 
     #Total_price strong {
         color: #007bff;
@@ -246,9 +235,9 @@
 
 
     {% else %}
-    <p class="emptycart">Cart is Empty..<small><i class="bi bi-emoji-expressionless"></i></small></p>
+    <p class="emptycart">CART IS EMPTY<small><i class="bi bi-emoji-expressionless"></i></small></p>
     {% endif %}
 
-    <a href="{% url 'productpage' %}" class="btn btn-sm btn-primary" id="shopmore">SHOP MORE</a>
+    <a href="{% url 'productpage' %}" class="btn" id="shopmore">SHOP MORE</a>
 </section>
 {% endblock %}

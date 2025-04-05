@@ -24,97 +24,108 @@
 
   <!--  -->
   <!-- Linking the scripts -->
-   <style>
-
-  
-  .edZEWR.variant-c .hero-background img {
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    width: 100vw !important;
-}
+  <style>
+    .edZEWR.variant-c .hero-background img {
+      max-width: 100vw;
+      margin-left: calc(50% - 50vw);
+      width: 100vw !important;
+    }
 
 
-   
 
 
-    
 
-   footer {
+
+
+    footer {
       background-color: #282828;
       text-align: center;
       padding: 2rem;
-      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); */
-    } 
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+      */
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <script src="{% static 'js/script.js' %}"></script>
 </head>
 
 <body>
-  <header> 
+  <header>
 
-   
-  
 
-  <nav>
-    <a href="" style="background-color: none;">
-     <button id="Logo">
-     </button>
-    </a>
-    <a href="{% url 'homepage' %}" class="nav-item">HOME</a>
-    <a href=" {% url 'productpage' %}" class="nav-item">COMICS</a>
-    <a href="#about" class="nav-item">ABOUT</a>
-    
-    <a href="{% url 'add_prod' %}" class="nav-item">ADD PRODUCT</a>
-    {% if user.is_authenticated %}
 
-    <a class="nav-item">
-      <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit" style="border:transparent;"> LOGOUT</button>
+
+    <nav>
+      <a href="" style="background-color: none;">
+        <button id="Logo">
+        </button>
+      </a>
+      <a href="{% url 'homepage' %}" class="nav-item">HOME</a>
+      <a href=" {% url 'productpage' %}" class="nav-item">COMICS</a>
+      <a href="#about" class="nav-item">ABOUT</a>
+
+      <a href="{% url 'add_prod' %}" class="nav-item">ADD PRODUCT</a>
+      {% if user.is_authenticated %}
+
+      <a class="nav-item">
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" style="border:transparent;"> LOGOUT</button>
+        </form>
+      </a>
+
+      <a href="{% url 'view_cart' %}" class="nav-item">CART</a>
+
+
+      <a href="{% url 'order_history' %}" class="nav-item">ORDERS</a>
+
+      {% else %}
+
+      <a href="{% url 'signin' %}" class="nav-item">LOGIN</a>
+      <a href="{% url 'signup' %}" class="nav-item">REGISTER</a>
+
+
+
+
+      {% endif %}
+
+
+      <form class="d-flex" role="search" method="get" action="{% url 'prod_search' %}" id="search">
+        <input class="form-control me-2" type="search" placeholder="SEARCH" aria-label="Search" name="search_text"
+          value="{{query}}">
+        <button class="btn btn-outline-success" type="submit"><Big><i class="bi bi-search"></i></Big></button>
       </form>
-    </a>
-
-    <a href="{% url 'view_cart' %}" class="nav-item">CART</a>
-
-
-    <a href="{% url 'order_history' %}" class="nav-item">ORDERS</a>
-
-    {% else %}
-
-    <a  href="{% url 'signin' %}" class="nav-item">LOGIN</a>
-    <a href="{% url 'signup' %}" class="nav-item">REGISTER</a>
-
-    
-
-
-    {% endif %}
-
-
-    <form class="d-flex" role="search" method="get" action="{% url 'prod_search' %}" id="search">
-      <input class="form-control me-2" type="search" placeholder="SEARCH" aria-label="Search" name="search_text"
-        value="{{query}}">
-      <button class="btn btn-outline-success" type="submit"><Big><i class="bi bi-search"></i></Big></button>
-    </form>
-    {% if page == 'home' %}
-    <nav class="mini_nav">
-      <a href="#New">NEW COMICS</a>
-      <a href="#about">MOVIES</a>
-      <a href="#contact">CONTACT</a>
+      {% if page == 'home' %}
+      <nav class="mini_nav">
+        <a href="#New">NEW COMICS</a>
+        <a href="#about">MOVIES</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      {% endif %}
     </nav>
-    {% endif %}
-  </nav>
   </header>
-  
+
 
   <main>
     <!-- The content of page goes here -->
     {% block content %}
     {% endblock %}
+
   </main>
+
+  <div id="chatbot-icon">
+    HELLO ! THERE
+  </div>
+
+  <div id="chatbot-container" style="display: none;">
+    <button id="close-chatbot">Close</button>
+    <iframe src="https://www.chatbase.co/chatbot-iframe/MCsylTg6cpJjo-nX0unpJ" width="100%"
+      style="height: 100%; min-height: 300px" frameborder="0"></iframe>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>

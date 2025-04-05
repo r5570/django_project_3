@@ -16,11 +16,20 @@ def home(request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render(context,request))
 
+
+def mail(request):
+    context={   
+    }
+    template = loader.get_template('Customer_mail.html')
+    return HttpResponse(template.render(context,request))
+
+
 def productlist(request):
     products=Product.objects.all() #querying all records in the DB  OF ENTITY TYPE ' Product'
     context = {
 
         'prods' : products #the key prods will now be Available to  use in the django template design
+        
 
     } #context dictionary for passing data for rendering
     template = loader.get_template('product.html') #template object from the designed template html

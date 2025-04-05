@@ -50,23 +50,79 @@ Home page
   }
 
 
+  .hero{
+    display: block;
+    height: 20vh;
+    border: 1px solid;
+  }
 
+  .hero:hover {
+
+    #hero-title {
+      overflow: hidden;
+      border-right: 2px solid white;
+      /* simulate cursor */
+      white-space: nowrap;
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+      width: 0;
+      animation-fill-mode: forwards;
+    }
+
+    #hero-paragraph {
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      animation-delay: 3s;
+      /* starts after title animation finishes */
+    }
+
+    /* Typing effect */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Blinking cursor */
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: white;
+      }
+    }
+
+    /* Fade in paragraph */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+  }
 </style>
 <section class="Home-content">
   <div class="Home-image">
 
   </div>
   <div class="hero">
-    <h1 id="hero-title"></h1>
-    <p id="hero-paragraph"></p>
+    <h1 id="hero-title">Dive into the Epic stores</h1>
+    <p id="hero-paragraph">Welcome to the world of Marvel and Dc comics</p>
   </div>
   <div class="blank"></div>
 
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
       const titleElement = document.getElementById('hero-title');
       const paragraphElement = document.getElementById('hero-paragraph');
-      const fullTitle = "Dive Into Epic Stories";
+      const fullTitle = "DIVE INTO THE EPIC STORIES";
       const fullParagraph = "Explore the vast universes of Marvel and DC comics.";
       let titleIndex = 0;
     
@@ -88,7 +144,7 @@ Home page
       typeTitle(); // Start typing immediately after DOM is loaded.
     
     });
-    </script>
+    </script> -->
   <section class="N_section" id="New">
 
 
@@ -166,30 +222,30 @@ Home page
 
     <section id="about" class="about">
       <h2>ABOUT COSMIC NEXUS </h2>
-       
-        <div class="about_div">
-          <div class="about_image"></div>
-        </div class="about_div">
 
-        <p>We're more than just a comic book store; we're a gateway to the boundless universes of Marvel and DC. At
-          Cosmic
-          Nexus, we're driven by a deep love for the art, the stories, and the characters that have shaped
-          generations.
-          Our mission is to curate a collection that honors the rich history of these iconic publishers, while also
-          showcasing the exciting new voices pushing the medium forward. We believe in building a community where
-          fans
-          can
-          connect, discover hidden gems, and celebrate the shared passion that brings us all together. Whether
-          you're a
-          seasoned collector or a curious newcomer, we welcome you to explore the cosmic tapestry of stories waiting
-          within our pages. <br>
-          At Cosmic Nexus Comics, we believe in the power of stories. Stories that inspire, excite, and transport us
-          to
-          worlds beyond our own. We've created a space where you can explore the vast and ever-expanding universes
-          of
-          Marvel and DC, discovering new heroes, iconic villains, and the compelling narratives that bind them
-          together.
-          We're here to help you find your next great adventure, one comic at a time.</p>
+      <div class="about_div">
+        <div class="about_image"></div>
+      </div class="about_div">
+
+      <p>We're more than just a comic book store; we're a gateway to the boundless universes of Marvel and DC. At
+        Cosmic
+        Nexus, we're driven by a deep love for the art, the stories, and the characters that have shaped
+        generations.
+        Our mission is to curate a collection that honors the rich history of these iconic publishers, while also
+        showcasing the exciting new voices pushing the medium forward. We believe in building a community where
+        fans
+        can
+        connect, discover hidden gems, and celebrate the shared passion that brings us all together. Whether
+        you're a
+        seasoned collector or a curious newcomer, we welcome you to explore the cosmic tapestry of stories waiting
+        within our pages. <br>
+        At Cosmic Nexus Comics, we believe in the power of stories. Stories that inspire, excite, and transport us
+        to
+        worlds beyond our own. We've created a space where you can explore the vast and ever-expanding universes
+        of
+        Marvel and DC, discovering new heroes, iconic villains, and the compelling narratives that bind them
+        together.
+        We're here to help you find your next great adventure, one comic at a time.</p>
       </div>
 
     </section>
@@ -200,33 +256,12 @@ Home page
       <p>"Join the conversation! We value your input and love hearing from our community. If you have any questions,
         suggestions, or just want to chat about your favorite panels, reach out to us. You can use the form below to
         mail us directly. Let's connect!"</p>
-        <p>Or</p>
-        <p>"Got a question, comment, or just want to say hello? We'd love to hear from you! Please fill out the form below or send us an email directly through Website. We aim to respond to all inquiries within 48 hours."</p>
+      <p>Or</p>
+      <p>"Got a question, comment, or just want to say hello? We'd love to hear from you! Please fill out the form below
+        or send us an email directly through Website. We aim to respond to all inquiries within 48 hours."</p>
+       <a href="{% url 'mail_page' %}"> <button class="btn btn-primary"></button></a>
     </section>
-    <section class="form">
-      <form action="https://api.web3forms.com/submit" method="POST" id="contact_form">
-
-        <input type="hidden" name="access_key" value="c58e3323-2b38-446c-ae1c-8b4c7583d092">
-
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" required></textarea>
-
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-        <button type="submit">SEND MAIL</button>
-
-      </form>
-
-
-    </section>
-    
-    <!-- <section class="footer-bulletin">
+      <!-- <section class="footer-bulletin">
       <div class="scroll-container">
         <div class="scroll-content">
           <span><i class="bi bi-megaphone"></i> New arrival: X-Men facsimile edition!</span>
@@ -247,9 +282,71 @@ Home page
       </div>
     </section> -->
   </section>
-    <footer>
-      <p>&copy; 2024 Cosmic Nexus Comics. All rights reserved.</p>
-    </footer>
+  <footer class="py-5">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Marvel Universe</h5>
+        <ul class="nav flex-column">
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Spider-Man Collection</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Avengers Assemble</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">X-Men Legacy</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Iron Man Tech Series</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Guardians of the Galaxy</a></li>
+        </ul>
+      </div>
 
+      <div class="col-6 col-md-2 mb-3">
+        <h5>DC Universe</h5>
+        <ul class="nav flex-column">
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Batman Dark Knight</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Superman Legacy</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Wonder Woman Chronicles</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Justice League Heroes</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">The Flash Multiverse</a></li>
+        </ul>
+      </div>
 
-    {% endblock %}
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Collectibles & Merch</h5>
+        <ul class="nav flex-column">
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Action Figures</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Graphic Novels</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Posters & Art Prints</a></li>
+          <li><a href="#" class="nav-link p-0 text-body-secondary">Limited Edition Statues</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form class="Subscribe">
+          <h5>Subscribe to HeroHub Newsletter</h5>
+          <p>Get the latest updates on comics, exclusive launches, and fan events.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn" type="button">SUBSCRIBE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2024 HeroHub Comics. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+              <use xlink:href="#twitter"></use>
+            </svg></a></li>
+        <li><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+              <use xlink:href="#instagram"></use>
+            </svg></a></li>
+        <li><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+              <use xlink:href="#facebook"></use>
+            </svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  {% endblock %}

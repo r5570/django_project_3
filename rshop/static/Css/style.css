@@ -111,9 +111,6 @@ nav {
     transition-duration: 20ms;
     animation-timing-function: linear; 
    
-    /* border: 1px solid black;
-    transition-duration: 40ms; */
-
     button {
         color: white;
     }

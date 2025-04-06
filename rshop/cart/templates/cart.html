@@ -8,7 +8,7 @@
 {% if cart_items %}
 
 <style>
-       .cart_section {
+    .cart_section {
         padding: 40px 20px;
         background-color: whitesmoke;
         color: #e0e0e0;
@@ -27,7 +27,8 @@
         border: 1px black solid;
     }
 
-    .table th, .table td {
+    .table th,
+    .table td {
         padding: 15px;
         text-align: left;
         border-bottom: 1px solid #333;
@@ -63,7 +64,8 @@
         width: 150px;
     }
 
-    .row button, .row p {
+    .row button,
+    .row p {
         padding: 8px 12px;
         margin: 0 5px;
         border-radius: 5px;
@@ -82,12 +84,49 @@
         background-color: #444;
     }
 
+
+    a {
+        text-decoration: none;
+    }
+
     .btn {
         padding: 10px 15px;
         border-radius: 5px;
         text-decoration: none;
         display: inline-block;
         transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+
+    #remove,
+    #place {
+
+        text-decoration: transparent;
+        text-align: center;
+    }
+
+
+    #remove:hover {
+
+        background-color: rgb(208, 46, 46);
+        
+       
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    #place:hover {
+
+        background-color: green;
+        text-align: center;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
     }
 
     .btn-outline-secondary {
@@ -104,10 +143,17 @@
         margin-bottom: 20px;
     }
 
-   
+
 
     #Total_price strong {
         color: #007bff;
+    }
+
+
+    #shopmore{
+
+        text-align: center;
+        width: 100%;
     }
 
     @media (max-width: 768px) {
@@ -115,7 +161,12 @@
             width: 100%;
         }
 
-        .table, .table thead, .table tbody, .table th, .table td, .table tr {
+        .table,
+        .table thead,
+        .table tbody,
+        .table th,
+        .table td,
+        .table tr {
             display: block;
         }
 
@@ -147,12 +198,29 @@
             font-weight: 600;
         }
 
-        .table td:nth-of-type(1):before { content: ""; }
-        .table td:nth-of-type(2):before { content: "PRODUCT"; }
-        .table td:nth-of-type(3):before { content: "PRICE"; }
-        .table td:nth-of-type(4):before { content: "QUANTITY"; }
-        .table td:nth-of-type(5):before { content: "SUB TOTAL"; }
-        .table td:nth-of-type(6):before { content: ""; }
+        .table td:nth-of-type(1):before {
+            content: "";
+        }
+
+        .table td:nth-of-type(2):before {
+            content: "PRODUCT";
+        }
+
+        .table td:nth-of-type(3):before {
+            content: "PRICE";
+        }
+
+        .table td:nth-of-type(4):before {
+            content: "QUANTITY";
+        }
+
+        .table td:nth-of-type(5):before {
+            content: "SUB TOTAL";
+        }
+
+        .table td:nth-of-type(6):before {
+            content: "";
+        }
 
         .row {
             width: 100%;
@@ -166,8 +234,7 @@
 
 <section class="cart_section">
 
-    <section class="cart_flex
-">
+    <section class="cart_flex">
         <table class="table">
             <thead>
                 <th>
@@ -219,15 +286,15 @@
                     <td id="total-price-{{ item.id }}">
                         {{item.get_total_price}}
                     </td>
-                    <td>
-                        <a href="{% url 'del_cart' item.id %}" class="btn ">REMOVE FROM CART</a>
+                    <td id="remove">
+                        <a href="{% url 'del_cart' item.id %}" class="btn">REMOVE FROM CART</a>
                     </td>
                 </tr>
                 {% endfor %}
                 <tr>
                     <th colspan="4" class="text-center" id="Total">TOTAL</th>
                     <td id="Total_price"><strong>Rs.<span id="overall-total">{{ total_price }}</span></strong></td>
-                    <td><a href="{% url 'create_order' %}" class="btn">PLACE YOUR ORDER</a></td>
+                    <td id="place"><a href="{% url 'create_order' %}" class="btn">PLACE YOUR ORDER</a></td>
                 </tr>
             </tbody>
         </table>

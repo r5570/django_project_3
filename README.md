@@ -11,11 +11,12 @@ ComicVerse is a secure and feature-rich web application that allows users to exp
   - Session-based cart tracking  
   - Access control for protected routes
 
-- 🛒 **Comic Shopping System**  
+-  **Comic Shopping System**  
   - Add comic books to cart  
   - Modify cart contents (add/remove/update quantity)  
   - Purchase directly or via cart checkout  
   - Order summary and confirmation system
+
 
 -  **Payment Integration**  
   - Razorpay payment gateway integration for safe and smooth online transactions
@@ -24,6 +25,7 @@ ComicVerse is a secure and feature-rich web application that allows users to exp
   - Class-Based Views (CBVs) for cleaner and scalable routing  
   - Django Models to ensure data consistency and relational integrity  
   - Admin panel to manage comics, users, and orders
+
 
 -  **Tech Stack**  
   - **Frontend:** HTML, CSS, JavaScript, Bootstrap  

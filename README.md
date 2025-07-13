@@ -6,34 +6,18 @@ ComicVerse is a secure and feature-rich web application that allows users to exp
 
 ##  Features
 
--  **User Authentication & Session Management**  
-  - Secure user registration, login, and logout functionality  
-  - Session-based cart tracking  
-  - Access control for protected routes
+-  **a full stack comic website with secured user authentication and session management features including login,
+registration, and logout, along with a fully functional shopping cart system enabling users to purchase comics directly or
+via cart management.**  
+ 
 
--  **Comic Shopping System**  
-  - Add comic books to cart  
-  - Modify cart contents (add/remove/update quantity)  
-  - Purchase directly or via cart checkout  
-  - Order summary and confirmation system
+-  **Integrated Razor pay payment gateway for secure online transactions and implemented version control and collaborative
+development workflows using VS Code and Git.**  
 
+-  **Employed class-based views and Django models to streamline backend operations, ensure data integrity, and maintain
+scalability.**  
+  
 
--  **Payment Integration**  
-  - Razorpay payment gateway integration for safe and smooth online transactions
-
--  **Backend Functionality**  
-  - Class-Based Views (CBVs) for cleaner and scalable routing  
-  - Django Models to ensure data consistency and relational integrity  
-  - Admin panel to manage comics, users, and orders
-
-
--  **Tech Stack**  
-  - **Frontend:** HTML, CSS, JavaScript, Bootstrap  
-  - **Backend:** Django (Python)  
-  - **Database:** SQLite (can be configured for PostgreSQL or MySQL)  
-  - **Payment:** Razorpay  
-  - **Version Control:** Git, GitHub  
-  - **Development Environment:** Visual Studio Code
 
   - -  **Hope you got little Idea about the Project** 
 

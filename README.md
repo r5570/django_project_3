@@ -4,9 +4,9 @@ ComicVerse is a secure and feature-rich web application that allows users to exp
 
 ---
 
-##  Features
+##  About the Project
 
--  **a full stack comic website with secured user authentication and session management features including login,
+-  **The above project is a full stack comic website with secured user authentication and session management features including login,
 registration, and logout, along with a fully functional shopping cart system enabling users to purchase comics directly or
 via cart management.**  
  

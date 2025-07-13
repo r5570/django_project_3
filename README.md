@@ -6,7 +6,7 @@ ComicVerse is a secure and feature-rich web application that allows users to exp
 
 ##  Features
 
-- 🔐 **User Authentication & Session Management**  
+-  **User Authentication & Session Management**  
   - Secure user registration, login, and logout functionality  
   - Session-based cart tracking  
   - Access control for protected routes
